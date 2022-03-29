@@ -1,0 +1,31 @@
+nav {
+  height: 120px;
+  width: 100vw;
+  background-color:#4056A1;
+  color: #FFFFFF;
+  padding: 1.5em;
+  /* z-index: 1000; */
+  position: fixed;
+  /* top: 0; */
+}
+
+/* #header {
+  /* z-index: 100; */
+  
+/* } */ */
+
+nav span {
+  font-family: 'Bungee', cursive;
+}
+
+#arrow {
+  position: relative;
+  float: right;
+  margin-top: 10px;
+}
+
+#actionPhrase {
+  position: relative;
+  float: right;
+}
+

@@ -31,3 +31,11 @@ article.tweet p {
   margin: 0.5em;
   overflow-wrap: break-word;
 }
+
+article.tweet footer div i{
+  color: #4056A1;
+}
+
+article.tweet footer div i:hover{
+  color: orange;
+}

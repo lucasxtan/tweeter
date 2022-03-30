@@ -1,0 +1,42 @@
+.new-tweet {
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  width:50%
+}
+
+#tweet-text {
+  display:flex;
+  justify-content:center;
+  width:100%;
+  border-style: bottom;
+  border-color: Transparent;
+  border-bottom: 3px solid dimgray;
+  background-color: Transparent;
+  overflow:auto;
+  /* font-family: 'bungee'; */
+  /* border-bottom-width: 8px; */
+}
+
+.tweet-phrase {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
+}
+
+#tweet-button {
+  color: white;
+  background-color: #4056A1;
+  font-family: 'bungee';
+  font-size:medium;
+}
+
+#tweet-submit-counter {
+  display:flex;
+  justify-content:space-between;
+  margin-top: 10px;
+}
+
+.counter {
+  font-family: 'bungee';
+  justify-content: flex-end;
+}

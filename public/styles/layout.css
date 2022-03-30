@@ -33,4 +33,5 @@ body {
    justify-content:center;
    flex-direction:column;
    color: #545149;
+   margin:auto;
  }

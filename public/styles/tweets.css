@@ -10,7 +10,7 @@ article:hover {
   box-shadow: 10px 10px rgb(126, 171, 189);
 }
 
-.tweet-section {
+#tweets-container {
   width:85%;
   max-width:30em;
 }

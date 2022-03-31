@@ -6,24 +6,30 @@
 
 // const { json } = require("express/lib/response");
 
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
 
-
+//change all id here to be classes cause every time you submit one it will create a copy of the id and id should be unique
+//don't need header or footer tags at all
 function createTweetElement(tweetData) {
   const $tweet = $(
     `<article class="tweet">
   <header>
     <div class="icon-name">
-      <img src=${tweetData.user.avatars} id="avatar">
+      <img src=${tweetData.user.avatars} class="avatar">
       <label>${tweetData.user.name}</label>
     </div>
     <div>
       <p class="tag-name">${tweetData.user.handle}</p>
     </div>
-  </header id="header">
+  </header>
   <p>
-    ${tweetData.content.text}
+    ${escape(tweetData.content.text)}
   </p>
-  <footer id="footer">
+  <footer>
     <div>
       ${timeago.format(tweetData.created_at)}
     </div>
@@ -64,15 +70,18 @@ const tweetDataArray = [
   }
 ]
 
+//this renders a new tweet
 function renderTweets(tweetDataArray) {
+  $('.tweets-container').empty();
   for (let tweetData of tweetDataArray) {
     const $tweetItem = createTweetElement(tweetData);
-    $('#tweets-container').append($tweetItem);
+    $('#tweets-container').prepend($tweetItem);
   }
 }
 
 
 
+//takes in input from user
 $('#tweetSubmit').on('submit', function (event) { //'#tweetSubmit is the form, .on('submit') has a function of on submission, do this, then add the function
   event.preventDefault() //on the event, prevent default (means don't refresh after submission)
 
@@ -89,9 +98,13 @@ $('#tweetSubmit').on('submit', function (event) { //'#tweetSubmit is the form, .
       method: 'POST',
       url: '/tweets',
       data: text,
-      // success: loadTweets() //for some reason it wasn't successful and didn't refresh
+      success: () => { //on success
+        loadTweets()
+        $('#tweet-text').val('') //clear the text in the text box on success
+        $('.counter').text(140); //reset counter to 140
+      } //for some reason it wasn't successful and didn't refresh
 
-    }).done(loadTweets()) //handles both failure and success, should only be for success
+    }) //.done(loadTweets()) //handles both failure and success, should only be for success
   }
 })
 

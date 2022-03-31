@@ -33,7 +33,7 @@ article.tweet header {
   align-items: center;
 }
 
-#avatar {
+.avatar {
   width: 1.3em;
   margin-right:0.3em;
 }

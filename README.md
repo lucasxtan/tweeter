@@ -1,13 +1,18 @@
 # Tweeter Project
-Tweeter is a simple, single-page Twitter clone.
+Hi, my name's Lucas
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills.
+Tweeter is a simple, single-page Twitter clone. 
+- It is equipped with responsive design to meet needs of mobile devices as well as desktop
+- It's tweet submission will submit a tweet with the correct timestamp
+- Tweet posts dynamic that change styles while hovering and are saved in reverse-chronological order
+
+Try it out yourself!
 
 ## Final Product
 
-!["Screenshot of login page"](https://github.com/lucasxtan/tinyapp/blob/master/docs/Login%20page.png?raw=true)
-!["Screenshot of page to create short URLs"](https://github.com/lucasxtan/tinyapp/blob/master/docs/create%20shortURLs%20page.png?raw=true)
-!["Screenshot of URLs page with update and delete function"](https://github.com/lucasxtan/tinyapp/blob/master/docs/shortURLs%20page.png?raw=true)
+!["Screenshot of homepage"](https://github.com/lucasxtan/tweeter/blob/master/docs/homescreen.png?raw=true)
+!["Screenshot of submit error"](https://github.com/lucasxtan/tweeter/blob/master/docs/error%20message%20and%20counter.png?raw=true)
+!["Screenshot of mobile version"](https://github.com/lucasxtan/tweeter/blob/master/docs/mobile%20version.png?raw=true)
 
 ## Getting Started
 
@@ -21,3 +26,6 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+- Body parser
+- Chance
+- md5

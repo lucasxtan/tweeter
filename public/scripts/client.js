@@ -84,13 +84,14 @@ function renderTweets(tweetDataArray) {
 //takes in input from user
 $('#tweetSubmit').on('submit', function (event) { //'#tweetSubmit is the form, .on('submit') has a function of on submission, do this, then add the function
   event.preventDefault() //on the event, prevent default (means don't refresh after submission)
-
+  $('.alert').hide();
   //1. Validation of the text should be not null
   let userTweet = $('#tweet-text').val();
   if (userTweet === null || userTweet === '') {
-    alert("Please enter something. It cannot be blank");
+    $('.error-message-none').slideDown();
   } else if (140 - userTweet.length < 0) {
-    alert("Your tweet is too long")
+    // alert("Your tweet is too long") 
+    $('.error-message-long').slideDown();
   } else if (140 - userTweet.length > 0 && (userTweet !== null || userTweet !== '')) {
     const text = $(this).serialize(); //$(this) captures what's in #tweetSubmit, which includes the <textarea> where you input text. .serialize() is used to send json to server, cause json can only recognize json, can't just send string must send json, so convert to json
     console.log(text)
@@ -106,6 +107,9 @@ $('#tweetSubmit').on('submit', function (event) { //'#tweetSubmit is the form, .
 
     }) //.done(loadTweets()) //handles both failure and success, should only be for success
   }
+  // else {
+  //   $('.error-message').hide();
+  // }
 })
 
 function loadTweets() {

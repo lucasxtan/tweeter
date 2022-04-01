@@ -5,9 +5,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,600;1,300;1,600&display=swap"
+    rel="stylesheet">
 
   <!-- Meta Information -->
   <title>Tweeter - Home Page</title>
@@ -18,16 +20,18 @@
 
   <!-- App CSS -->
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/nav.css"/>
-  <link rel="stylesheet" href="/styles/header.css"/>
-  <link rel="stylesheet" href="/styles/new-tweet.css"/>
-  <link rel="stylesheet" href="/styles/tweets.css"/>
+  <link rel="stylesheet" href="/styles/nav.css" />
+  <link rel="stylesheet" href="/styles/header.css" />
+  <link rel="stylesheet" href="/styles/new-tweet.css" />
+  <link rel="stylesheet" href="/styles/tweets.css" />
 
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="/scripts/composer-char-counter.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+    integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
   <!-- App JS -->
@@ -41,33 +45,40 @@
     <div>
       <i class="fa-solid fa-angles-down" id="arrow"></i>
     </div>
-
   </nav>
-  <header id="header-profile">
-    <div>
-      <img src="/images/profile-hex.png">
-    </div>
-    <br>
-    <div>
-      <h2>Lucas Tan</h2>
-    </div>
-  </header>
+  <div id="header-main">
+    <header id="header-profile">
+      <div>
+        <img src="/images/profile-hex.png">
+      </div>
+      <br>
+      <div>
+        <h2>Lucas Tan</h2>
+      </div>
+    </header>
 
-  <!-- Page-specific (main) content here -->
-  <main class="container">
-    <section class="new-tweet">
-      <h2>Compose Tweet</h2>
-      <form id="tweetSubmit" action="/tweets/" method="POST">
-        <label for="tweet-text" class="tweet-phrase">What are you humming about?</label>
-        <textarea name="text" id="tweet-text"></textarea>
-        <div id="tweet-submit-counter">
-          <button type="submit" id="tweet-button">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
+    <!-- Page-specific (main) content here -->
+    <main class="container">
+      <section class="new-tweet">
+        <div class="error-message-long alert alert-danger">
+          <p>Your tweet was too long</p>
         </div>
-      </form>
-    </section>
-    <section id="tweets-container"></section>
-  </main>
+        <div class="error-message-none alert alert-danger">
+          <p>Please write something to tweet</p>
+        </div>
+        <h2>Compose Tweet</h2>
+        <form id="tweetSubmit" action="/tweets/" method="POST">
+          <label for="tweet-text" class="tweet-phrase">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div id="tweet-submit-counter">
+            <button type="submit" id="tweet-button">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+      <section id="tweets-container"></section>
+    </main>
+  </div>
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
 </body>

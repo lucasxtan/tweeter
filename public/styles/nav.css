@@ -33,8 +33,8 @@ nav span {
 
 @media only screen and (max-width: 768px) {
   nav {
-    background-color:transparent;
-    position:absolute;
+    background-color:#ffcc00;
+    /* position:sticky; */
     width:100%
   }
 }

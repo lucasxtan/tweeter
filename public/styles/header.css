@@ -8,3 +8,19 @@
   background-color: #ffcc00;
   background-image: url(http://www.transparenttextures.com/patterns/asfalt-light.png);
 }
+
+ /* Medium devices (landscape tablets, 768px and up) */
+ @media only screen and (min-width: 768px) {
+  #header-profile {
+    flex-direction:column;
+    width:20em;
+    z-index:-1;
+    margin:2em;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #header-profile {
+    height:500px;
+  }
+}

@@ -35,3 +35,15 @@ body {
    color: #545149;
    margin:auto;
  }
+
+ /* Medium devices (landscape tablets, 768px and up) */
+ @media only screen and (min-width: 768px) {
+   main {
+    width:50%;
+  }
+
+  #header-main {
+    display:flex;
+    flex-direction:row
+  }
+}

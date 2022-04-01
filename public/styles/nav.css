@@ -31,3 +31,10 @@ nav span {
   float: right;
 }
 
+@media only screen and (max-width: 768px) {
+  nav {
+    background-color:transparent;
+    position:absolute;
+    width:100%
+  }
+}

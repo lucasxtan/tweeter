@@ -14,8 +14,6 @@
   border-bottom: 3px solid dimgray;
   background-color: Transparent;
   overflow:auto;
-  /* font-family: 'bungee'; */
-  /* border-bottom-width: 8px; */
 }
 
 .tweet-phrase {
@@ -53,7 +51,6 @@
   display:none;
   position: relative;
   padding: 0.75rem 1.25rem;
-  /* margin-bottom: 1rem; */
   margin-top: 1rem;
   border: 1px solid transparent;
   border-radius: 0.25rem;

@@ -94,22 +94,18 @@ $('#tweetSubmit').on('submit', function (event) { //'#tweetSubmit is the form, .
     $('.error-message-long').slideDown();
   } else if (140 - userTweet.length > 0 && (userTweet !== null || userTweet !== '')) {
     const text = $(this).serialize(); //$(this) captures what's in #tweetSubmit, which includes the <textarea> where you input text. .serialize() is used to send json to server, cause json can only recognize json, can't just send string must send json, so convert to json
-    console.log(text)
     $.ajax({ //need ajax to add it in, say method: post, url: /tweets/, data: is the text variable which captures your text input as json
       method: 'POST',
       url: '/tweets',
       data: text,
-      success: () => { //on success
+      success: () => { //on success //the function inside must be written like () => {function()} cause that calls the function, function() is the value of the result of the function, which is wrong
         loadTweets()
         $('#tweet-text').val('') //clear the text in the text box on success
         $('.counter').text(140); //reset counter to 140
       } //for some reason it wasn't successful and didn't refresh
 
-    }) //.done(loadTweets()) //handles both failure and success, should only be for success
+    })
   }
-  // else {
-  //   $('.error-message').hide();
-  // }
 })
 
 function loadTweets() {
@@ -124,22 +120,3 @@ function loadTweets() {
 }
 
 loadTweets()
-// renderTweets(tweetDataArray);
-
-// const tweetData = {
-//   "user": {
-//     "name": "Newton",
-//     "avatars": "https://i.imgur.com/73hZDYK.png",
-//     "handle": "@SirIsaac"
-//     },
-//   "content": {
-//       "text": "If I have seen further it is by standing on the shoulders of giants"
-//     },
-//   "created_at": 1461116232227
-// }
-
-// const $tweet = createTweetElement(tweetData);
-
-// Test / driver code (temporary)
-// console.log($tweet); // to see what it looks like
-// $('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.

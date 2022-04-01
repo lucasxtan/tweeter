@@ -42,7 +42,8 @@
   <!-- Top nav bar (fixed) -->
   <nav>
     <span>tweeter</span>
-    <div>
+    <div class="icon-message">
+      <p><strong>Write</strong> a new tweet</p>
       <i class="fa-solid fa-angles-down" id="arrow"></i>
     </div>
   </nav>
@@ -68,8 +69,8 @@
         </div>
         <h2>Compose Tweet</h2>
         <form id="tweetSubmit" action="/tweets/" method="POST">
-          <label for="tweet-text" class="tweet-phrase">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
+          <!-- <label for="tweet-text" class="tweet-phrase">What are you humming about?</label> -->
+          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
           <div id="tweet-submit-counter">
             <button type="submit" id="tweet-button">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>

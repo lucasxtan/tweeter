@@ -18,12 +18,24 @@ nav span {
 #arrow {
   position: relative;
   float: right;
-  margin-top: 10px;
+  /* margin-top: 10px; */
 }
 
 #actionPhrase {
   position: relative;
   float: right;
+}
+
+.icon-message {
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items:center;
+  font-family:'Source Sans Pro', sans-serif;
+}
+
+.icon-message:Write {
+  font-weight:bold;
 }
 
 @media only screen and (max-width: 768px) {

@@ -47,6 +47,7 @@
       <i class="fa-solid fa-angles-down" id="arrow"></i>
     </div>
   </nav>
+  <!--header profile pic-->
   <div id="header-main">
     <header id="header-profile">
       <div>
@@ -61,6 +62,7 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
+        <!--error messages-->
         <div class="error-message-long alert alert-danger">
           <p>Your tweet was too long</p>
         </div>
@@ -68,8 +70,8 @@
           <p>Please write something to tweet</p>
         </div>
         <h2>Compose Tweet</h2>
+        <!--textbox area-->
         <form id="tweetSubmit" action="/tweets/" method="POST">
-          <!-- <label for="tweet-text" class="tweet-phrase">What are you humming about?</label> -->
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
           <div id="tweet-submit-counter">
             <button type="submit" id="tweet-button">Tweet</button>
@@ -77,6 +79,7 @@
           </div>
         </form>
       </section>
+      <!--list of tweets-->
       <section id="tweets-container"></section>
     </main>
   </div>

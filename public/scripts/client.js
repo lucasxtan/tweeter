@@ -4,7 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// const { json } = require("express/lib/response");
 
 const escape = function (str) {
   let div = document.createElement("div");
@@ -12,8 +11,7 @@ const escape = function (str) {
   return div.innerHTML;
 };
 
-//change all id here to be classes cause every time you submit one it will create a copy of the id and id should be unique
-//don't need header or footer tags at all
+//creates new tweet data
 function createTweetElement(tweetData) {
   const $tweet = $(
     `<article class="tweet">
@@ -43,7 +41,7 @@ function createTweetElement(tweetData) {
   return $tweet;
 }
 
-// Fake data taken from initial-tweets.json
+// data of tweets
 const tweetDataArray = [
   {
     "user": {
@@ -82,32 +80,35 @@ function renderTweets(tweetDataArray) {
 
 
 //takes in input from user
-$('#tweetSubmit').on('submit', function (event) { //'#tweetSubmit is the form, .on('submit') has a function of on submission, do this, then add the function
-  event.preventDefault() //on the event, prevent default (means don't refresh after submission)
+$('#tweetSubmit').on('submit', function (event) { 
+  event.preventDefault() //refresh after submission
+
+  //hide error message
   $('.alert').hide();
-  //1. Validation of the text should be not null
+
+  //error message conditions
   let userTweet = $('#tweet-text').val();
-  if (userTweet === null || userTweet === '') {
+  if (userTweet === null || userTweet === '') { //if user didn't input anything
     $('.error-message-none').slideDown();
-  } else if (140 - userTweet.length < 0) {
-    // alert("Your tweet is too long") 
+  } else if (140 - userTweet.length < 0) { //if user typed too long of a tweet
     $('.error-message-long').slideDown();
-  } else if (140 - userTweet.length > 0 && (userTweet !== null || userTweet !== '')) {
-    const text = $(this).serialize(); //$(this) captures what's in #tweetSubmit, which includes the <textarea> where you input text. .serialize() is used to send json to server, cause json can only recognize json, can't just send string must send json, so convert to json
-    $.ajax({ //need ajax to add it in, say method: post, url: /tweets/, data: is the text variable which captures your text input as json
+  } else if (140 - userTweet.length > 0 && (userTweet !== null || userTweet !== '')) { //post tweet
+    const text = $(this).serialize(); 
+    $.ajax({ 
       method: 'POST',
       url: '/tweets',
       data: text,
-      success: () => { //on success //the function inside must be written like () => {function()} cause that calls the function, function() is the value of the result of the function, which is wrong
+      success: () => { //on success execute this
         loadTweets()
         $('#tweet-text').val('') //clear the text in the text box on success
         $('.counter').text(140); //reset counter to 140
-      } //for some reason it wasn't successful and didn't refresh
+      }
 
     })
   }
 })
 
+//load tweets
 function loadTweets() {
   $.ajax({
     method: 'GET',

@@ -66,7 +66,7 @@ const tweetDataArray = [
     },
     "created_at": 1461113959088
   }
-]
+];
 
 //this renders a new tweet
 function renderTweets(tweetDataArray) {
@@ -80,8 +80,8 @@ function renderTweets(tweetDataArray) {
 
 
 //takes in input from user
-$('#tweetSubmit').on('submit', function (event) { 
-  event.preventDefault() //refresh after submission
+$('#tweetSubmit').on('submit', function (event) {
+  event.preventDefault(); //refresh after submission
 
   //hide error message
   $('.alert').hide();
@@ -93,20 +93,20 @@ $('#tweetSubmit').on('submit', function (event) {
   } else if (140 - userTweet.length < 0) { //if user typed too long of a tweet
     $('.error-message-long').slideDown();
   } else if (140 - userTweet.length > 0 && (userTweet !== null || userTweet !== '')) { //post tweet
-    const text = $(this).serialize(); 
-    $.ajax({ 
+    const text = $(this).serialize();
+    $.ajax({
       method: 'POST',
       url: '/tweets',
       data: text,
       success: () => { //on success execute this
-        loadTweets()
-        $('#tweet-text').val('') //clear the text in the text box on success
+        loadTweets();
+        $('#tweet-text').val(''); //clear the text in the text box on success
         $('.counter').text(140); //reset counter to 140
       }
 
-    })
+    });
   }
-})
+});
 
 //load tweets
 function loadTweets() {
@@ -117,7 +117,7 @@ function loadTweets() {
     success: function (result) {
       renderTweets(result);
     }
-  })
+  });
 }
 
-loadTweets()
+loadTweets();
